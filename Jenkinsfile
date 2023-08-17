@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 import groovy.transform.Field
 import groovy.json.JsonSlurper
 
-node ('build-machinejava') 
+node ('Build-Ansible') 
 {
 
       parameters 
@@ -70,7 +70,7 @@ def docker_image_push()
 def deploying_to_k8s() {
       
 stage('k8s deployment') {
-      node ("ansible-machine")
+      node ("Build-Ansible")
       {
             sh "cd /opt ; sudo ansible-playbook devops.yaml"
             
